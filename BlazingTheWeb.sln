@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.28809.33
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.WebAssembly", "BlazingTheWeb.WebAssembly\BlazingTheWeb.WebAssembly.csproj", "{CDADEB7E-5463-475C-AE7C-BC8F5D2101B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.Core", "BlazingTheWeb.Core\BlazingTheWeb.Core.csproj", "{A6AACFFC-E225-45C4-867B-E812ECBADC7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.Core.Tests", "BlazingTheWeb.Core.Tests\BlazingTheWeb.Core.Tests.csproj", "{ACC10B27-36B3-4633-86A7-FEE52925CBB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{CDADEB7E-5463-475C-AE7C-BC8F5D2101B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDADEB7E-5463-475C-AE7C-BC8F5D2101B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDADEB7E-5463-475C-AE7C-BC8F5D2101B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6AACFFC-E225-45C4-867B-E812ECBADC7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6AACFFC-E225-45C4-867B-E812ECBADC7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6AACFFC-E225-45C4-867B-E812ECBADC7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6AACFFC-E225-45C4-867B-E812ECBADC7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACC10B27-36B3-4633-86A7-FEE52925CBB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACC10B27-36B3-4633-86A7-FEE52925CBB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACC10B27-36B3-4633-86A7-FEE52925CBB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACC10B27-36B3-4633-86A7-FEE52925CBB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
