@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28809.33
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.WebAssembly", "BlazingTheWeb.WebAssembly\BlazingTheWeb.WebAssembly.csproj", "{CDADEB7E-5463-475C-AE7C-BC8F5D2101B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDADEB7E-5463-475C-AE7C-BC8F5D2101B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDADEB7E-5463-475C-AE7C-BC8F5D2101B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDADEB7E-5463-475C-AE7C-BC8F5D2101B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDADEB7E-5463-475C-AE7C-BC8F5D2101B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4C4E480-AFE9-400E-B096-191181A6D7AD}
+	EndGlobalSection
+EndGlobal
