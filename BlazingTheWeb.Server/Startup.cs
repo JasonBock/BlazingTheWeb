@@ -11,6 +11,7 @@ namespace BlazingTheWeb.Server
 	{
 		public void ConfigureServices(IServiceCollection services)
 		{
+			//services.AddServerSideBlazor();
 			services.AddMvc().AddNewtonsoftJson();
 			services.AddResponseCompression(opts =>
 			{

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script>
+window.onload = function () { 
+	var ctx = document.getElementById('myChart');
+	var myChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			labels: ['1', '2', '3', '4', '5'],
+			datasets: [{
+				label: '# of Votes',
+				data: [12, 19, 3, 5, 2],
+			}]
+		}
+	});
+}
+</script>
+</head>
+<body>
+	<canvas id="myChart" width="150" height="150"></canvas>
+</body>
+</html>
