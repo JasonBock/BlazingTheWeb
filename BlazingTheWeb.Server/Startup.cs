@@ -11,7 +11,6 @@ namespace BlazingTheWeb.Server
 	{
 		public void ConfigureServices(IServiceCollection services)
 		{
-			//services.AddServerSideBlazor();
 			services.AddMvc().AddNewtonsoftJson();
 			services.AddResponseCompression(opts =>
 			{
@@ -30,14 +29,16 @@ namespace BlazingTheWeb.Server
 				app.UseBlazorDebugging();
 			}
 
+			app.UseStaticFiles();
+			app.UseClientSideBlazorFiles<Client.Startup>();
+
 			app.UseRouting();
 
 			app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapDefaultControllerRoute();
+				endpoints.MapFallbackToClientSideBlazor<Client.Startup>("index.html");
 			});
-
-			app.UseBlazor<Client.Startup>();
 		}
 	}
 }
