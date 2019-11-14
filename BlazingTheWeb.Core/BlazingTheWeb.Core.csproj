@@ -7,6 +7,6 @@
     <Version>1.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.Collections.Immutable" Version="1.6.0-preview9.19421.4" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.6.0" />
   </ItemGroup>
 </Project>
