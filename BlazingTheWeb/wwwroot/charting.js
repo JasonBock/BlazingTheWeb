@@ -8,6 +8,9 @@
                 label: 'Values',
                 data: data,
             }]
+        },
+        options: {
+            responsive: false
         }
     });
 };
