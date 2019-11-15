@@ -64,7 +64,8 @@
         else
         {
             this.currentSequence = $"{this.Start} is not a valid integer.";
-            this.StateHasChanged();
+            this.sequence = default;
+            this.labels = Array.Empty<string>();
             this.StateHasChanged();
             await this.JSRuntime.InvokeAsync<object>("updateChart", CollatzChartId,
                 Array.Empty<int>(), Array.Empty<string>());

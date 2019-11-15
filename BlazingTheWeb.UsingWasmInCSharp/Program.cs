@@ -5,7 +5,7 @@ namespace BlazingTheWeb.UsingWasmInCSharp
 {
 	public static class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
 			var module = Compile.FromBinary<dynamic>(
 				@"..\..\..\..\BlazingTheWeb.WebAssembly\wwwroot\collatz.wasm");

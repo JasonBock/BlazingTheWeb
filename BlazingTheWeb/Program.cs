@@ -4,11 +4,11 @@ namespace BlazingTheWeb
 {
 	public static class Program
 	{
-		public static void Main() => 
+		public static void Main() =>
 			Program.CreateHostBuilder().Build().Run();
 
 		public static IWebAssemblyHostBuilder CreateHostBuilder() =>
-			 BlazorWebAssemblyHost.CreateDefaultBuilder()
-				  .UseBlazorStartup<Startup>();
+			BlazorWebAssemblyHost.CreateDefaultBuilder()
+				.UseBlazorStartup<Startup>();
 	}
 }
