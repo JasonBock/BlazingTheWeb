@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.WebComponents
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.WebAssemblyHost", "BlazingTheWeb.WebAssemblyHost\BlazingTheWeb.WebAssemblyHost.csproj", "{425492D7-CF14-4D79-A3D4-FB63755547E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.ServerSideHost", "BlazingTheWeb.ServerSideHost\BlazingTheWeb.ServerSideHost.csproj", "{05E888F7-E78B-40B3-9263-EE3D454CDECD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{425492D7-CF14-4D79-A3D4-FB63755547E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{425492D7-CF14-4D79-A3D4-FB63755547E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{425492D7-CF14-4D79-A3D4-FB63755547E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05E888F7-E78B-40B3-9263-EE3D454CDECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05E888F7-E78B-40B3-9263-EE3D454CDECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05E888F7-E78B-40B3-9263-EE3D454CDECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05E888F7-E78B-40B3-9263-EE3D454CDECD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

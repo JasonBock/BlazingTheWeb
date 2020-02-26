@@ -9,15 +9,20 @@ using System.Threading.Tasks;
 namespace BlazingTheWeb.WebComponents
 {
 	public sealed class SequenceViewModel
+		: IDisposable
 	{
 		private readonly IJSRuntime runtime;
+		private DotNetObjectReference<SequenceViewModel> reference;
 
 		public SequenceViewModel(IJSRuntime runtime) =>
 			this.runtime = runtime;
 
-		public async Task GetGeolocationAsync() =>
+		public async Task GetGeolocationAsync()
+		{
+			this.reference = DotNetObjectReference.Create(this);
 			await this.runtime.InvokeAsync<object>(
-				"getGeolocation", DotNetObjectReference.Create(this));
+				"Geolocation.getGeolocation", this.reference);
+		}
 
 		[JSInvokable]
 		public void Change(double latitude, double longitude, double accuracy)
@@ -42,7 +47,7 @@ namespace BlazingTheWeb.WebComponents
 					this.Labels = Enumerable.Range(1, sequence.Sequence.Length).Select(_ => _.ToString()).ToArray();
 					this.Changed?.Invoke(this, EventArgs.Empty);
 					await this.runtime.InvokeAsync<object>(
-						"updateChart", this.CollatzChartId,
+						"Charts.updateChart", this.CollatzChartId,
 						sequence.Sequence.Select(_ => (int)_).ToArray(), this.Labels);
 				}
 				catch (ArgumentException)
@@ -51,7 +56,7 @@ namespace BlazingTheWeb.WebComponents
 					this.Sequence = default;
 					this.Labels = Array.Empty<string>();
 					await this.runtime.InvokeAsync<object>(
-						"updateChart", this.CollatzChartId, 
+						"Charts.updateChart", this.CollatzChartId, 
 						Array.Empty<int>(), Array.Empty<string>());
 					this.Changed?.Invoke(this, EventArgs.Empty);
 				}
@@ -62,9 +67,19 @@ namespace BlazingTheWeb.WebComponents
 				this.Sequence = default;
 				this.Labels = Array.Empty<string>();
 				await this.runtime.InvokeAsync<object>(
-					"updateChart", this.CollatzChartId, 
+					"Charts.updateChart", this.CollatzChartId, 
 					Array.Empty<int>(), Array.Empty<string>());
 				this.Changed?.Invoke(this, EventArgs.Empty);
+			}
+		}
+
+		public void Dispose()
+		{
+			GC.SuppressFinalize(this);
+
+			if (this.reference is { })
+			{
+				this.reference.Dispose();
 			}
 		}
 
