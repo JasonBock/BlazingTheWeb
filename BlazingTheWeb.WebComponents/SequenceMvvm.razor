@@ -23,7 +23,7 @@
 <button class="btn btn-primary" @onclick="this.ViewModel.CreateSequence">Create Sequence</button>
 <p>Current sequence: @this.ViewModel.CurrentSequence</p>
 
-<canvas id=@this.ViewModel.CollatzChartId width="800" height="600"></canvas>
+<canvas @ref=@this.ViewModel.ChartReference width="800" height="600"></canvas>
 
 @code {
     protected override async Task OnAfterRenderAsync(bool firstRender)

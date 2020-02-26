@@ -1,4 +1,5 @@
 ﻿using BlazingTheWeb.Core;
+using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace BlazingTheWeb.WebComponents
 		{
 			this.reference = DotNetObjectReference.Create(this);
 			await this.runtime.InvokeAsync<object>(
-				"Geolocation.getGeolocation", this.reference);
+				Constants.GeolocationMethod, this.reference);
 		}
 
 		[JSInvokable]
@@ -47,7 +48,7 @@ namespace BlazingTheWeb.WebComponents
 					this.Labels = Enumerable.Range(1, sequence.Sequence.Length).Select(_ => _.ToString()).ToArray();
 					this.Changed?.Invoke(this, EventArgs.Empty);
 					await this.runtime.InvokeAsync<object>(
-						"Charts.updateChart", this.CollatzChartId,
+						Constants.ChartsMethod, this.ChartReference,
 						sequence.Sequence.Select(_ => (int)_).ToArray(), this.Labels);
 				}
 				catch (ArgumentException)
@@ -56,7 +57,7 @@ namespace BlazingTheWeb.WebComponents
 					this.Sequence = default;
 					this.Labels = Array.Empty<string>();
 					await this.runtime.InvokeAsync<object>(
-						"Charts.updateChart", this.CollatzChartId, 
+						Constants.ChartsMethod, this.ChartReference, 
 						Array.Empty<int>(), Array.Empty<string>());
 					this.Changed?.Invoke(this, EventArgs.Empty);
 				}
@@ -67,7 +68,7 @@ namespace BlazingTheWeb.WebComponents
 				this.Sequence = default;
 				this.Labels = Array.Empty<string>();
 				await this.runtime.InvokeAsync<object>(
-					"Charts.updateChart", this.CollatzChartId, 
+					Constants.ChartsMethod, this.ChartReference, 
 					Array.Empty<int>(), Array.Empty<string>());
 				this.Changed?.Invoke(this, EventArgs.Empty);
 			}
@@ -87,7 +88,7 @@ namespace BlazingTheWeb.WebComponents
 		public string BingMainUrl { get; private set; }
 		public string BingLargeMapUrl { get; private set; }
 		public string BingDirectionsUrl { get; private set; }
-		public string CollatzChartId => "collatzChart";
+		public ElementReference ChartReference { get; set; }
 		public string CurrentSequence { get; private set; }
 		public string[] Labels { get; private set; }
 		public double Latitude { get; private set; }

@@ -42,7 +42,7 @@
         {
             this.reference = DotNetObjectReference.Create(this);
             await JSRuntime.InvokeAsync<object>(
-                "Geolocation.getGeolocation", this.reference);
+                Constants.GeolocationMethod, this.reference);
         }
     }
 

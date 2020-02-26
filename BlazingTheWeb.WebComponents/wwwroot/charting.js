@@ -1,7 +1,6 @@
 ﻿var Charts = {
-    updateChart: function (id, data, labels) {
-        var context = document.getElementById(id);
-        var chart = new Chart(context, {
+    updateChart: function (element, data, labels) {
+        var chart = new Chart(element, {
             type: 'line',
             data: {
                 labels: labels,

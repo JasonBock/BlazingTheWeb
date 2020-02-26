@@ -14,10 +14,10 @@
 <button class="btn btn-primary" @onclick="this.OnCreateSequenceAsync">Create Sequence</button>
 <p>Current sequence: @this.currentSequence</p>
 
-<canvas id=@CollatzChartId width="800" height="600"></canvas>
+<canvas @ref=chartReference width="800" height="600"></canvas>
 
 @code {
-    const string CollatzChartId = "collatzChart";
+    ElementReference chartReference;
 
     [Parameter]
     public string Start { get; set; }
@@ -50,7 +50,7 @@
                 this.sequence = sequence.Sequence.Select(_ => (object)(int)_).ToList();
                 this.labels = Enumerable.Range(1, sequence.Sequence.Length).Select(_ => _.ToString()).ToArray();
                 this.StateHasChanged();
-                await this.JSRuntime.InvokeAsync<object>("Charts.updateChart", CollatzChartId,
+                await this.JSRuntime.InvokeAsync<object>(Constants.ChartsMethod, this.chartReference,
                    sequence.Sequence.Select(_ => (int)_).ToArray(), this.labels);
             }
             catch (ArgumentException)
@@ -59,7 +59,7 @@
                 this.sequence = default;
                 this.labels = Array.Empty<string>();
                 this.StateHasChanged();
-                await this.JSRuntime.InvokeAsync<object>("Charts.updateChart", CollatzChartId,
+                await this.JSRuntime.InvokeAsync<object>(Constants.ChartsMethod, this.chartReference,
                     Array.Empty<int>(), Array.Empty<string>());
             }
         }
@@ -69,7 +69,7 @@
             this.sequence = default;
             this.labels = Array.Empty<string>();
             this.StateHasChanged();
-            await this.JSRuntime.InvokeAsync<object>("Charts.updateChart", CollatzChartId,
+            await this.JSRuntime.InvokeAsync<object>(Constants.ChartsMethod, this.chartReference,
                 Array.Empty<int>(), Array.Empty<string>());
         }
     }
