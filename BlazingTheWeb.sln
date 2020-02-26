@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29505.145
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb", "BlazingTheWeb\BlazingTheWeb.csproj", "{425F85ED-5A92-49AC-BDE6-DEC39A9B7E59}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{982DE15C-A991-4BB5-A657-77675C209F72}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -16,7 +14,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.Core", "Blazi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.Core.Tests", "BlazingTheWeb.Core.Tests\BlazingTheWeb.Core.Tests.csproj", "{F0B01178-51CA-4F78-B8C1-C8C81B2ECB46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.UsingWasmInCSharp", "BlazingTheWeb.UsingWasmInCSharp\BlazingTheWeb.UsingWasmInCSharp.csproj", "{4160940A-322F-4D3D-ACC2-3496EA963A33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.UsingWasmInCSharp", "BlazingTheWeb.UsingWasmInCSharp\BlazingTheWeb.UsingWasmInCSharp.csproj", "{4160940A-322F-4D3D-ACC2-3496EA963A33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,10 +22,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{425F85ED-5A92-49AC-BDE6-DEC39A9B7E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{425F85ED-5A92-49AC-BDE6-DEC39A9B7E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{425F85ED-5A92-49AC-BDE6-DEC39A9B7E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{425F85ED-5A92-49AC-BDE6-DEC39A9B7E59}.Release|Any CPU.Build.0 = Release|Any CPU
 		{537FFF8F-2BA9-4A57-91ED-F36543E835A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{537FFF8F-2BA9-4A57-91ED-F36543E835A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{537FFF8F-2BA9-4A57-91ED-F36543E835A8}.Release|Any CPU.ActiveCfg = Release|Any CPU

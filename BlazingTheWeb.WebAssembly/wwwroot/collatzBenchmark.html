@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WebAssembly Demo - Collatz Benchmark</title>
+	</head>
+	<body>
+		<button onclick='runBenchmarks()'>Run Benchmarks</button>
+		<script src="../node_modules/lodash/lodash.js"></script>
+		<script src="../node_modules/platform/platform.js"></script>
+		<script src="../node_modules/benchmark/benchmark.js"></script>
+		<script>
+			function collatz(value) {
+				let count = 0;
+
+				if (value > 1) {
+					while (value > 1) {
+						if (value % 2 == 0) {
+							value = value / 2;
+						}
+						else {
+							value = (3 * value) + 1;
+						}
+
+						count++;
+					}
+				}
+				return count;
+			}
+
+			// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+			var wasmExports;
+
+			fetch('collatz.wasm')
+				.then(response => response.arrayBuffer())
+				.then(buffer => WebAssembly.instantiate(buffer))
+				.then(results => {
+					wasmExports = results.instance.exports;
+				});
+
+			function runBenchmarks() {
+				var suite = new Benchmark.Suite;
+
+				suite.add('WASMCollatz', function() {
+					wasmExports.collatz(50000);
+                })
+                .add('JSCollatz', function () {
+                    collatz(50000);
+				})
+				.on('cycle', function(event) {
+					console.log(String(event.target));
+				})
+				.on('complete', function() {
+					console.log('Fastest is ' + this.filter('fastest').map('name'));
+				})
+				.run({ 'async': true });
+			}
+		</script>
+	</body>
+</html>

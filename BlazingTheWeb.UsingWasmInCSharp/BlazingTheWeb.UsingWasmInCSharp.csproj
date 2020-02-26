@@ -7,6 +7,6 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="WebAssembly" Version="0.7.1-preview" />
+    <PackageReference Include="WebAssembly" Version="0.8.0-preview" />
   </ItemGroup>
 </Project>
