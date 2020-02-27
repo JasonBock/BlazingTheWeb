@@ -22,6 +22,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.WebAssemblyHo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.ServerSideHost", "BlazingTheWeb.ServerSideHost\BlazingTheWeb.ServerSideHost.csproj", "{05E888F7-E78B-40B3-9263-EE3D454CDECD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.Components.Testing", "Microsoft.AspNetCore.Components.Testing\Microsoft.AspNetCore.Components.Testing.csproj", "{D1E10EBE-9D99-468D-AD9D-396F6B7BE958}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.WebComponents.Tests", "BlazingTheWeb.WebComponents.Tests\BlazingTheWeb.WebComponents.Tests.csproj", "{55321608-F943-4BDF-8746-D74D88CDBD83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +60,14 @@ Global
 		{05E888F7-E78B-40B3-9263-EE3D454CDECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05E888F7-E78B-40B3-9263-EE3D454CDECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05E888F7-E78B-40B3-9263-EE3D454CDECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1E10EBE-9D99-468D-AD9D-396F6B7BE958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E10EBE-9D99-468D-AD9D-396F6B7BE958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E10EBE-9D99-468D-AD9D-396F6B7BE958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E10EBE-9D99-468D-AD9D-396F6B7BE958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55321608-F943-4BDF-8746-D74D88CDBD83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55321608-F943-4BDF-8746-D74D88CDBD83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55321608-F943-4BDF-8746-D74D88CDBD83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55321608-F943-4BDF-8746-D74D88CDBD83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

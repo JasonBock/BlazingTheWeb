@@ -1,2 +1,2 @@
 # Blazing the Web - Building Web Applications in C#
-This repository contains the demo code used in the presentation.
+This repository contains the demo code used in the presentation. Note that the component testing project (`Microsoft.AspNetCore.Components.Testing`) can be found [here](https://github.com/SteveSandersonMS/BlazorUnitTestingPrototype).
