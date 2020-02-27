@@ -16,7 +16,7 @@ namespace BlazingTheWeb.WebComponents
 		private DotNetObjectReference<SequenceViewModel> reference;
 
 		public SequenceViewModel(IJSRuntime runtime) =>
-			this.runtime = runtime;
+			this.runtime = runtime ?? throw new ArgumentNullException(nameof(runtime));
 
 		public async Task GetGeolocationAsync()
 		{
