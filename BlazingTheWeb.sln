@@ -26,6 +26,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.Compon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.WebComponents.Tests", "BlazingTheWeb.WebComponents.Tests\BlazingTheWeb.WebComponents.Tests.csproj", "{55321608-F943-4BDF-8746-D74D88CDBD83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.ConsoleHost", "BlazingTheWeb.ConsoleHost\BlazingTheWeb.ConsoleHost.csproj", "{A0BF6EFA-0E4C-4677-8181-AD93EE8FE8BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{55321608-F943-4BDF-8746-D74D88CDBD83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55321608-F943-4BDF-8746-D74D88CDBD83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55321608-F943-4BDF-8746-D74D88CDBD83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0BF6EFA-0E4C-4677-8181-AD93EE8FE8BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0BF6EFA-0E4C-4677-8181-AD93EE8FE8BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0BF6EFA-0E4C-4677-8181-AD93EE8FE8BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0BF6EFA-0E4C-4677-8181-AD93EE8FE8BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
