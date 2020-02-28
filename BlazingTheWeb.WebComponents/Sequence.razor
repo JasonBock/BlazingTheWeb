@@ -49,7 +49,6 @@
                 this.currentSequence = string.Join(", ", sequence.Sequence);
                 this.sequence = sequence.Sequence.Select(_ => (object)(int)_).ToList();
                 this.labels = Enumerable.Range(1, sequence.Sequence.Length).Select(_ => _.ToString()).ToArray();
-                this.StateHasChanged();
                 await this.JSRuntime.InvokeAsync<object>(Constants.ChartsMethod, this.chartReference,
                    sequence.Sequence.Select(_ => (int)_).ToArray(), this.labels);
             }
@@ -58,7 +57,6 @@
                 this.currentSequence = $"The value, {value}, is incorrect.";
                 this.sequence = default;
                 this.labels = Array.Empty<string>();
-                this.StateHasChanged();
                 await this.JSRuntime.InvokeAsync<object>(Constants.ChartsMethod, this.chartReference,
                     Array.Empty<int>(), Array.Empty<string>());
             }
@@ -68,9 +66,10 @@
             this.currentSequence = $"{this.Start} is not a valid integer.";
             this.sequence = default;
             this.labels = Array.Empty<string>();
-            this.StateHasChanged();
             await this.JSRuntime.InvokeAsync<object>(Constants.ChartsMethod, this.chartReference,
                 Array.Empty<int>(), Array.Empty<string>());
         }
+
+        this.StateHasChanged();
     }
 }
