@@ -1,0 +1,31 @@
+﻿@using System.Diagnostics
+@using System.Numerics
+
+@inject CollatzGrpc.Collatz.CollatzClient collatzClient
+
+@page "/sequence-grpc"
+
+<h1>Sequence</h1>
+
+<button class="btn btn-primary" @onclick="this.OnCreateSequenceAsync">Find Longest Sequence</button>
+<p>Results: @this.results</p>
+
+@code {
+    string results = string.Empty;
+    private Range range = 50_000..60_000;
+
+    public async void OnCreateSequenceAsync()
+    {
+        var stopwatch = Stopwatch.StartNew();
+        var request = new CollatzGrpc.CollatzRequest()
+        {
+            Start = range.Start.Value,
+            End = range.End.Value
+        };
+        var result = await collatzClient.FindLongestSequenceAsync(request);
+        stopwatch.Stop();
+
+        this.results = $"Longest sequence in range {range} is {result.Length} for { new BigInteger(result.Value.ToByteArray()) } - Elapsed time is {stopwatch.Elapsed}";
+        this.StateHasChanged();
+    }
+}
