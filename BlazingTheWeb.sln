@@ -30,7 +30,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.WebComponents
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.ConsoleHost", "BlazingTheWeb.ConsoleHost\BlazingTheWeb.ConsoleHost.csproj", "{A0BF6EFA-0E4C-4677-8181-AD93EE8FE8BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.ServiceHost", "BlazingTheWeb.ServiceHost\BlazingTheWeb.ServiceHost.csproj", "{A0CD6D07-A69F-48F5-B28B-EFD56B0B60E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.ServiceHost", "BlazingTheWeb.ServiceHost\BlazingTheWeb.ServiceHost.csproj", "{A0CD6D07-A69F-48F5-B28B-EFD56B0B60E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.SeleniumTests", "BlazingTheWeb.SeleniumTests\BlazingTheWeb.SeleniumTests.csproj", "{791BA695-E5C2-4E7E-8275-9ED8A4379D53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +84,10 @@ Global
 		{A0CD6D07-A69F-48F5-B28B-EFD56B0B60E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0CD6D07-A69F-48F5-B28B-EFD56B0B60E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0CD6D07-A69F-48F5-B28B-EFD56B0B60E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{791BA695-E5C2-4E7E-8275-9ED8A4379D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{791BA695-E5C2-4E7E-8275-9ED8A4379D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{791BA695-E5C2-4E7E-8275-9ED8A4379D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{791BA695-E5C2-4E7E-8275-9ED8A4379D53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

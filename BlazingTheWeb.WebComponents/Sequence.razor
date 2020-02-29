@@ -12,7 +12,7 @@
 
 <input type="text" @bind="this.Start" />
 <button class="btn btn-primary" @onclick="this.OnCreateSequenceAsync">Create Sequence</button>
-<p>Current sequence: @this.currentSequence</p>
+<p id="currentSequence">Current sequence: @this.currentSequence</p>
 
 <canvas @ref=chartReference width="800" height="600"></canvas>
 
