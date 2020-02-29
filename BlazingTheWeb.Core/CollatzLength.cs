@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Immutable;
 using System.Numerics;
 
 namespace BlazingTheWeb.Core
 {
-   public sealed class CollatzSequence
-   {
-		public CollatzSequence(BigInteger start)
+   public sealed class CollatzLength
+	{
+		public CollatzLength(BigInteger start)
 		{
 			if (start <= BigInteger.One)
 			{
@@ -14,20 +13,16 @@ namespace BlazingTheWeb.Core
 			}
 
 			this.Start = start;
-			var builder = ImmutableArray.CreateBuilder<BigInteger>();
-			builder.Add(start);
 
 			while (start > 1)
 			{
 				start = start % 2 == 0 ?
 					start / 2 : ((3 * start) + 1) / 2;
-				builder.Add(start);
+				this.Length++;
 			}
-
-			this.Sequence = builder.ToImmutable();
 		}
 
-		public ImmutableArray<BigInteger> Sequence { get; }
+		public int Length { get; }
 		public BigInteger Start { get; }
    }
 }

@@ -1,4 +1,5 @@
 ﻿using BlazingTheWeb.Core;
+using BlazingTheWeb.Core.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -27,42 +28,12 @@ namespace BlazingTheWeb.ConsoleHost
 			Console.Out.WriteLine($"Longest sequence in range {range} is {result.sequenceLength} for {result.value}");
 			Console.Out.WriteLine($"Elapsed time is {stopwatch.Elapsed}");
 		}
-
-		// https://softwareengineering.stackexchange.com/questions/187680/algorithm-for-dividing-a-range-into-ranges-and-then-finding-which-range-a-number
-		private static List<Range> DivideRange(Range range, int numberOfRanges)
-		{
-			var highestLength = (range.End.Value - range.Start.Value + 1) / numberOfRanges;
-			var bucketSizes = new int[numberOfRanges];
-			Array.Fill(bucketSizes, highestLength);
-
-			var surplus = (range.End.Value - range.Start.Value + 1) % numberOfRanges;
-			var surplusIndex = 0;
-
-			while(surplus > 0)
-			{
-				bucketSizes[surplusIndex]++;
-				surplusIndex = (surplusIndex++) % numberOfRanges;
-				surplus--;
-			}
-
-			var ranges = new List<Range>();
-
-			var k = range.Start.Value;
-
-			for (var i = 0; i < numberOfRanges; i++)
-			{
-				ranges.Add(new Range(k, k + bucketSizes[i] - 1));
-				k += bucketSizes[i];
-			}
-
-			return ranges;
-		}
-
+		
 		private static void FindParallel(Range range)
 		{
 			var stopwatch = Stopwatch.StartNew();
 			var tasks = new List<Task<(BigInteger value, int sequenceLength)>>();
-			var ranges = DivideRange(range, Environment.ProcessorCount);
+			var ranges = range.Partition(Environment.ProcessorCount);
 
 			for(var i = 0; i < Environment.ProcessorCount; i++)
 			{
@@ -76,6 +47,7 @@ namespace BlazingTheWeb.ConsoleHost
 			foreach (var task in tasks)
 			{
 				var taskResult = task.Result;
+
 				if (taskResult.sequenceLength > result.sequenceLength)
 				{
 					result = taskResult;
@@ -95,11 +67,11 @@ namespace BlazingTheWeb.ConsoleHost
 
 			for (var i = range.Start.Value; i < range.End.Value; i++)
 			{
-				var sequence = new CollatzSequence(i);
+				var sequence = new CollatzLength(i);
 
-				if(sequence.Sequence.Length > result.sequenceLength)
+				if(sequence.Length > result.sequenceLength)
 				{
-					result = (i, sequence.Sequence.Length);
+					result = (i, sequence.Length);
 				}
 			}
 
