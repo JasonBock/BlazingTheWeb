@@ -13,6 +13,7 @@ namespace BlazingTheWeb.Core
 			}
 
 			this.Start = start;
+			this.Length = 1;
 
 			while (start > 1)
 			{

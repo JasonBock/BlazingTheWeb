@@ -13,7 +13,7 @@ namespace BlazingTheWeb.Core.Tests
 			var sequence = new CollatzLength(start);
 
 			Assert.That(sequence.Start, Is.EqualTo(start), nameof(start));
-			Assert.That(sequence.Length, Is.EqualTo(4), nameof(sequence.Length));
+			Assert.That(sequence.Length, Is.EqualTo(5), nameof(sequence.Length));
 		}
 
 		[Test]
