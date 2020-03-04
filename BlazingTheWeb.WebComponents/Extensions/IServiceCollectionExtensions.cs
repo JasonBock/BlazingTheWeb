@@ -1,4 +1,5 @@
-﻿using Grpc.Net.Client;
+﻿using Blazored.LocalStorage;
+using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http;
@@ -16,6 +17,7 @@ namespace BlazingTheWeb.WebComponents.Extensions
 				var channel = GrpcChannel.ForAddress("https://localhost:3113", new GrpcChannelOptions { HttpClient = httpClient });
 				return new CollatzGrpc.Collatz.CollatzClient(channel);
 			});
+			@this.AddBlazoredLocalStorage();
 		}
 	}
 }

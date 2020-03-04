@@ -22,7 +22,7 @@ namespace BlazingTheWeb.WebComponents.Tests
 			var component = host.AddComponent<SurveyPrompt>(
 				new Dictionary<string, object> { { "Title", "My title" } } );
 
-			// You can't set it this way, it's a one-way binding and it won't work.
+			// This shouldn't be set outside of the component
 			//component.Instance.Title = "My title";
 
 			var titleNode = component.Find("strong");

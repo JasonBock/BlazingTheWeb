@@ -7,9 +7,6 @@
     <Version>1.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="CollatzLength.cs~RF5b9995c.TMP" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="System.Collections.Immutable" Version="1.7.0" />
   </ItemGroup>
 </Project>

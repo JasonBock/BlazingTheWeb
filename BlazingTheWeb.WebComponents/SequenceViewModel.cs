@@ -18,25 +18,7 @@ namespace BlazingTheWeb.WebComponents
 		public SequenceViewModel(IJSRuntime runtime) =>
 			this.runtime = runtime ?? throw new ArgumentNullException(nameof(runtime));
 
-		public async Task GetGeolocationAsync()
-		{
-			this.reference = DotNetObjectReference.Create(this);
-			await this.runtime.InvokeAsync<object>(
-				Constants.GeolocationMethod, this.reference);
-		}
-
-		[JSInvokable]
-		public void Change(double latitude, double longitude, double accuracy)
-		{
-			(this.Latitude, this.Longitude, this.Accuracy) = 
-				(latitude, longitude, accuracy);
-			this.BingMainUrl = $"https://www.bing.com/maps/embed?h=400&w=500&cp={latitude}~{longitude}&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8";
-			this.BingLargeMapUrl = $"https://www.bing.com/maps?cp={latitude}~{longitude}&amp;sty=r&amp;lvl=11&amp;FORM=MBEDLD";
-			this.BingDirectionsUrl = $"https://www.bing.com/maps/directions?cp={latitude}~-{longitude}&amp;sty=r&amp;lvl=11&amp;rtp=~pos.{latitude}_{longitude}____&amp;FORM=MBEDLD";
-			this.Changed?.Invoke(this, EventArgs.Empty);
-		}
-
-		public async Task CreateSequence()
+		public async Task CreateSequenceAsync()
 		{
 			if (BigInteger.TryParse(this.Value, out var value))
 			{
@@ -84,15 +66,9 @@ namespace BlazingTheWeb.WebComponents
 			}
 		}
 
-		public double Accuracy { get; private set; }
-		public string BingMainUrl { get; private set; }
-		public string BingLargeMapUrl { get; private set; }
-		public string BingDirectionsUrl { get; private set; }
 		public ElementReference ChartReference { get; set; }
 		public string CurrentSequence { get; private set; }
 		public string[] Labels { get; private set; }
-		public double Latitude { get; private set; }
-		public double Longitude { get; private set; }
 		public List<object> Sequence { get; private set; }
 		public string Value { get; set; }
 

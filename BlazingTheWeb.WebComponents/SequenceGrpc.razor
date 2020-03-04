@@ -5,16 +5,16 @@
 
 @page "/sequence-grpc"
 
-<h1>Sequence</h1>
+<h1>Sequence - Grpc</h1>
 
-<button class="btn btn-primary" @onclick="this.OnCreateSequenceAsync">Find Longest Sequence</button>
+<button class="btn btn-primary" @onclick="this.CreateSequenceAsync">Find Longest Sequence</button>
 <p>Results: @this.results</p>
 
 @code {
     string results = string.Empty;
-    private Range range = 50_000..60_000;
+    private Range range = 5_000..6_000;
 
-    public async void OnCreateSequenceAsync()
+    public async Task CreateSequenceAsync()
     {
         var stopwatch = Stopwatch.StartNew();
         var request = new CollatzGrpc.CollatzRequest()

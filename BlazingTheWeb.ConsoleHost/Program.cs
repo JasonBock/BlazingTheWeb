@@ -21,11 +21,11 @@ namespace BlazingTheWeb.ConsoleHost
 		private static void Find(Range range)
 		{
 			var stopwatch = Stopwatch.StartNew();
-			var result = Program.FindLongestSequence(range);
+			var (value, sequenceLength) = Program.FindLongestSequence(range);
 			stopwatch.Stop();
 
 			Console.Out.WriteLine(nameof(Find));
-			Console.Out.WriteLine($"Longest sequence in range {range} is {result.sequenceLength} for {result.value}");
+			Console.Out.WriteLine($"Longest sequence in range {range} is {sequenceLength} for {value}");
 			Console.Out.WriteLine($"Elapsed time is {stopwatch.Elapsed}");
 		}
 		

@@ -17,14 +17,14 @@
 </div>
 
 @code {
-    string bingMainUrl = default;
-    string bingLargeMapUrl = default;
-    string bingDirectionsUrl = default;
-    double latitude = default;
-    double longitude = default;
-    double accuracy = default;
+    double accuracy { get; set; }
+    string bingMainUrl { get; set; }
+    string bingLargeMapUrl { get; set; }
+    string bingDirectionsUrl { get; set; }
+    double latitude { get; set; }
+    double longitude { get; set; }
 
-    private DotNetObjectReference<Geolocation>? reference;
+    private DotNetObjectReference<Geolocation> reference;
 
     [JSInvokable]
     public void Change(double latitude, double longitude, double accuracy)
