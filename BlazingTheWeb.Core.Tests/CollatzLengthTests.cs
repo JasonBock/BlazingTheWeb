@@ -12,8 +12,11 @@ namespace BlazingTheWeb.Core.Tests
 			var start = new BigInteger(5);
 			var sequence = new CollatzLength(start);
 
-			Assert.That(sequence.Start, Is.EqualTo(start), nameof(start));
-			Assert.That(sequence.Length, Is.EqualTo(5), nameof(sequence.Length));
+			Assert.Multiple(() =>
+			{
+				Assert.That(sequence.Start, Is.EqualTo(start), nameof(start));
+				Assert.That(sequence.Length, Is.EqualTo(5), nameof(sequence.Length));
+			});
 		}
 
 		[Test]
