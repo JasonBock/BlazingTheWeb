@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
@@ -24,9 +23,8 @@ namespace BlazingTheWeb.WebComponents
 				{
 					var sequence = new CollatzSequence(value);
 					this.CurrentSequence = string.Join(", ", sequence.Sequence);
-					this.Sequence = sequence.Sequence.Select(_ => (object)(int)_).ToList();
+					this.Sequence = sequence.Sequence.Select(_ => (int)_).ToArray();
 					this.Labels = Enumerable.Range(1, sequence.Sequence.Length).Select(_ => _.ToString()).ToArray();
-					this.Changed?.Invoke(this, EventArgs.Empty);
 					await this.runtime.InvokeAsync<object>(
 						Constants.ChartsMethod, this.ChartReference,
 						sequence.Sequence.Select(_ => (int)_).ToArray(), this.Labels);
@@ -34,30 +32,30 @@ namespace BlazingTheWeb.WebComponents
 				catch (ArgumentException)
 				{
 					this.CurrentSequence = $"The value, {value}, is incorrect.";
-					this.Sequence = default;
+					this.Sequence = Array.Empty<int>();
 					this.Labels = Array.Empty<string>();
 					await this.runtime.InvokeAsync<object>(
-						Constants.ChartsMethod, this.ChartReference, 
+						Constants.ChartsMethod, this.ChartReference,
 						Array.Empty<int>(), Array.Empty<string>());
-					this.Changed?.Invoke(this, EventArgs.Empty);
 				}
 			}
 			else
 			{
 				this.CurrentSequence = $"{this.Value} is not a valid integer.";
-				this.Sequence = default;
+				this.Sequence = Array.Empty<int>();
 				this.Labels = Array.Empty<string>();
 				await this.runtime.InvokeAsync<object>(
-					Constants.ChartsMethod, this.ChartReference, 
+					Constants.ChartsMethod, this.ChartReference,
 					Array.Empty<int>(), Array.Empty<string>());
-				this.Changed?.Invoke(this, EventArgs.Empty);
 			}
+
+			this.Changed?.Invoke(this, EventArgs.Empty);
 		}
 
 		public ElementReference ChartReference { get; set; }
-		public string? CurrentSequence { get; private set; }
-		public string[]? Labels { get; private set; }
-		public List<object>? Sequence { get; private set; }
+		public string CurrentSequence { get; private set; } = string.Empty;
+		public string[] Labels { get; private set; } = Array.Empty<string>();
+		public int[] Sequence { get; private set; } = Array.Empty<int>();
 		public string? Value { get; set; }
 
 		public event EventHandler? Changed;
