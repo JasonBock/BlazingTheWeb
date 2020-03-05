@@ -10,10 +10,8 @@ using System.Threading.Tasks;
 namespace BlazingTheWeb.WebComponents
 {
 	public sealed class SequenceViewModel
-		: IDisposable
 	{
 		private readonly IJSRuntime runtime;
-		private DotNetObjectReference<SequenceViewModel> reference;
 
 		public SequenceViewModel(IJSRuntime runtime) =>
 			this.runtime = runtime ?? throw new ArgumentNullException(nameof(runtime));
@@ -56,22 +54,12 @@ namespace BlazingTheWeb.WebComponents
 			}
 		}
 
-		public void Dispose()
-		{
-			GC.SuppressFinalize(this);
-
-			if (this.reference is { })
-			{
-				this.reference.Dispose();
-			}
-		}
-
 		public ElementReference ChartReference { get; set; }
-		public string CurrentSequence { get; private set; }
-		public string[] Labels { get; private set; }
-		public List<object> Sequence { get; private set; }
-		public string Value { get; set; }
+		public string? CurrentSequence { get; private set; }
+		public string[]? Labels { get; private set; }
+		public List<object>? Sequence { get; private set; }
+		public string? Value { get; set; }
 
-		public event EventHandler Changed;
+		public event EventHandler? Changed;
 	}
 }

@@ -1,6 +1,5 @@
 ﻿@page "/sequence-mvvm"
 @inject SequenceViewModel ViewModel
-@implements IDisposable
 
 <h1>Sequence - MVVM</h1>
 
@@ -16,15 +15,5 @@
     protected override void OnInitialized()
     {
         this.ViewModel.Changed += (s, e) => this.StateHasChanged();
-    }
-
-    public void Dispose()
-    {
-        GC.SuppressFinalize(this);
-
-        if (this.ViewModel is { })
-        {
-            this.ViewModel.Dispose();
-        }
     }
 }
