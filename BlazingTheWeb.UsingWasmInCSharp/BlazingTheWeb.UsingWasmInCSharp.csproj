@@ -7,9 +7,6 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Program.cs~RF1e1782d0.TMP" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="WebAssembly" Version="0.8.0-preview" />
   </ItemGroup>
 </Project>

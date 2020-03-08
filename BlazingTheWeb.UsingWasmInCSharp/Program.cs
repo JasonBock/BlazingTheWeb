@@ -25,7 +25,7 @@ namespace BlazingTheWeb.UsingWasmInCSharp
 		private static void RunCollatzWithCallback()
 		{
 			var values = new List<int>();
-			var module = Compile.FromBinary<dynamic>(
+			var module = Compile.FromBinary<CollatzWithCallback>(
 				@"..\..\..\..\BlazingTheWeb.WebAssembly\wwwroot\collatzWithCallback.wasm");
 			var imports = new ImportDictionary
 			{
@@ -33,7 +33,7 @@ namespace BlazingTheWeb.UsingWasmInCSharp
 			};
 			using var instance = module(imports);
 			var functions = instance.Exports;
-			// 10, 5, 16, 8, 4, 2, 1 => 6 iterations
+			// 10 => "5, 16, 8, 4, 2, 1"
 			functions.collatz(10);
 			Console.Out.WriteLine(string.Join(", ", values));
 		}
