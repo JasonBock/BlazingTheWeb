@@ -1,8 +1,8 @@
 ﻿using BlazingTheWeb.Core;
-using BlazingTheWeb.Core.Extensions;
 using CollatzGrpc;
 using Google.Protobuf;
 using Grpc.Core;
+using Spackle.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Numerics;

@@ -1,5 +1,5 @@
 ﻿using BlazingTheWeb.Core;
-using BlazingTheWeb.Core.Extensions;
+using Spackle.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,8 +14,8 @@ namespace BlazingTheWeb.ConsoleHost
 		{
 			var range = 1_000_000..2_000_000;
 
-			Find(range);
-			FindParallel(range);
+			Program.Find(range);
+			Program.FindParallel(range);
 		}
 
 		private static void Find(Range range)
