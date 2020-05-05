@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		Protos\collatz.proto = Protos\collatz.proto
 		nuget.config = nuget.config
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.WebAssembly", "BlazingTheWeb.WebAssembly\BlazingTheWeb.WebAssembly.csproj", "{537FFF8F-2BA9-4A57-91ED-F36543E835A8}"
@@ -32,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.ConsoleHost",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.ServiceHost", "BlazingTheWeb.ServiceHost\BlazingTheWeb.ServiceHost.csproj", "{A0CD6D07-A69F-48F5-B28B-EFD56B0B60E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.SeleniumTests", "BlazingTheWeb.SeleniumTests\BlazingTheWeb.SeleniumTests.csproj", "{791BA695-E5C2-4E7E-8275-9ED8A4379D53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.SeleniumTests", "BlazingTheWeb.SeleniumTests\BlazingTheWeb.SeleniumTests.csproj", "{791BA695-E5C2-4E7E-8275-9ED8A4379D53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
