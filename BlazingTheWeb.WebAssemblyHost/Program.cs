@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Blazor.Hosting;
 using BlazingTheWeb.WebComponents;
 using BlazingTheWeb.WebComponents.Extensions;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BlazingTheWeb.WebAssemblyHost
 {

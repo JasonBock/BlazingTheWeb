@@ -22,7 +22,7 @@ namespace BlazingTheWeb.WebComponents.Tests
 			var component = host.AddComponent<SurveyPrompt>(
 				new Dictionary<string, object> { { "Title", "My title" } } );
 
-			// This shouldn't be set outside of the component
+			//This shouldn't be set outside of the component
 			//component.Instance.Title = "My title";
 
 			var titleNode = component.Find("strong");
