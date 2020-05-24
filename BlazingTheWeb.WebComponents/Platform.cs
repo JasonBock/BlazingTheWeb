@@ -9,13 +9,11 @@ namespace BlazingTheWeb.WebComponents
 	{
 		protected override void BuildRenderTree(RenderTreeBuilder builder)
 		{
-			builder.OpenElement(0, "div");
+			builder.OpenElement(0, "span");
 			builder.AddContent(1, this.Value);
 			builder.CloseElement();
 		}
 
-		private string Value =>
-			RuntimeInformation.IsOSPlatform(OSPlatform.Create("WEBASSEMBLY")) ?
-			"WebAssembly" : "Server";
+		private string Value => RuntimeInformation.OSDescription;
 	}
 }
