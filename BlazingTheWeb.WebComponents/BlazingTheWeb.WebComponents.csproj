@@ -8,15 +8,15 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="2.1.6" />
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.4" />
-    <PackageReference Include="Google.Protobuf" Version="3.12.1" />
-    <PackageReference Include="Grpc.Net.Client" Version="2.28.0" />
-    <PackageReference Include="Grpc.Tools" Version="2.29.0">
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.6" />
+    <PackageReference Include="Google.Protobuf" Version="3.12.3" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.30.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.30.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Grpc.Net.Client.Web" Version="2.27.0-dev202001100801" />
+    <PackageReference Include="Grpc.Net.Client.Web" Version="2.30.0" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Mono" Version="3.2.0-preview1.20052.1" />
     <PackageReference Include="Spackle" Version="9.1.5" />
   </ItemGroup>
