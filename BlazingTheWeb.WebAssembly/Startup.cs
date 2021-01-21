@@ -14,7 +14,6 @@ namespace BlazingTheWeb.WebAssembly
 			{
 				ContentTypeProvider = provider
 			});
-			app.UseNodeModules();
 		}
    }
 }
