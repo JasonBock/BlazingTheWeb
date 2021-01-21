@@ -3,7 +3,7 @@ using System.Numerics;
 
 namespace BlazingTheWeb.Core
 {
-   public sealed class CollatzLength
+	public sealed class CollatzLength
 	{
 		public CollatzLength(BigInteger start)
 		{
@@ -25,5 +25,5 @@ namespace BlazingTheWeb.Core
 
 		public int Length { get; }
 		public BigInteger Start { get; }
-   }
+	}
 }

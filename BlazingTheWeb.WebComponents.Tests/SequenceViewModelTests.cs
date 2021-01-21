@@ -12,7 +12,7 @@ namespace BlazingTheWeb.WebComponents.Tests
 		[Test]
 		public static void Create()
 		{
-			var viewModel = new SequenceViewModel(Rock.Make<IJSRuntime>());
+			var viewModel = new SequenceViewModel(Rock.Make<IJSRuntime>().Instance());
 			Assert.Multiple(() =>
 			{
 				Assert.That(viewModel.ChartReference, Is.EqualTo(default(ElementReference)), nameof(viewModel.Changed));
@@ -31,12 +31,12 @@ namespace BlazingTheWeb.WebComponents.Tests
 		public static async Task CreateSequence()
 		{
 			var runtime = Rock.Create<IJSRuntime>();
-			runtime.Handle(_ => _.InvokeAsync<object>(Constants.ChartsMethod, Arg.IsAny<object[]>()))
+			runtime.Methods().InvokeAsync<object>(Constants.ChartsMethod, Arg.Any<object?[]?>())
 				.Returns(new ValueTask<object>());
 
 			var wasChangedRaised = false;
 
-			var viewModel = new SequenceViewModel(runtime.Make())
+			var viewModel = new SequenceViewModel(runtime.Instance())
 			{
 				Value = "5"
 			};
@@ -58,12 +58,12 @@ namespace BlazingTheWeb.WebComponents.Tests
 		public static async Task CreateSequenceWhenValueIsIncorrect()
 		{
 			var runtime = Rock.Create<IJSRuntime>();
-			runtime.Handle(_ => _.InvokeAsync<object>(Constants.ChartsMethod, Arg.IsAny<object[]>()))
+			runtime.Methods().InvokeAsync<object>(Constants.ChartsMethod, Arg.Any<object?[]?>())
 				.Returns(new ValueTask<object>());
 
 			var wasChangedRaised = false;
 
-			var viewModel = new SequenceViewModel(runtime.Make())
+			var viewModel = new SequenceViewModel(runtime.Instance())
 			{
 				Value = "-5"
 			};
@@ -85,12 +85,12 @@ namespace BlazingTheWeb.WebComponents.Tests
 		public static async Task CreateSequenceWhenValueIsNotABigInteger()
 		{
 			var runtime = Rock.Create<IJSRuntime>();
-			runtime.Handle(_ => _.InvokeAsync<object>(Constants.ChartsMethod, Arg.IsAny<object[]>()))
+			runtime.Methods().InvokeAsync<object>(Constants.ChartsMethod, Arg.Any<object?[]?>())
 				.Returns(new ValueTask<object>());
 
 			var wasChangedRaised = false;
 
-			var viewModel = new SequenceViewModel(runtime.Make())
+			var viewModel = new SequenceViewModel(runtime.Instance())
 			{
 				Value = "quux"
 			};

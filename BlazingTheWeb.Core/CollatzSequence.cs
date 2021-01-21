@@ -4,8 +4,8 @@ using System.Numerics;
 
 namespace BlazingTheWeb.Core
 {
-   public sealed class CollatzSequence
-   {
+	public sealed class CollatzSequence
+	{
 		public CollatzSequence(BigInteger start)
 		{
 			if (start <= BigInteger.One)
@@ -14,6 +14,7 @@ namespace BlazingTheWeb.Core
 			}
 
 			this.Start = start;
+
 			var builder = ImmutableArray.CreateBuilder<BigInteger>();
 			builder.Add(start);
 
@@ -29,5 +30,5 @@ namespace BlazingTheWeb.Core
 
 		public ImmutableArray<BigInteger> Sequence { get; }
 		public BigInteger Start { get; }
-   }
+	}
 }

@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Components.Testing;
+﻿using Bunit;
 using NUnit.Framework;
-using System.Collections.Generic;
 
 namespace BlazingTheWeb.WebComponents.Tests
 {
@@ -9,24 +8,21 @@ namespace BlazingTheWeb.WebComponents.Tests
 		[Test]
 		public static void Initialize()
 		{
-			var host = new TestHost();
-			var component = host.AddComponent<SurveyPrompt>();
+			var host = new Bunit.TestContext();
+			var component = host.RenderComponent<SurveyPrompt>();
 			var titleNode = component.Find("strong");
-			Assert.That(titleNode.InnerText, Is.EqualTo(string.Empty));
+			Assert.That(titleNode.TextContent, Is.EqualTo(string.Empty));
 		}
 
 		[Test]
 		public static void InitializeWithParameters()
 		{
-			var host = new TestHost();
-			var component = host.AddComponent<SurveyPrompt>(
-				new Dictionary<string, object> { { "Title", "My title" } } );
-
-			//This shouldn't be set outside of the component
-			//component.Instance.Title = "My title";
+			var host = new Bunit.TestContext();
+			var component = host.RenderComponent<SurveyPrompt>(
+				ComponentParameter.CreateParameter("Title", "My title"));
 
 			var titleNode = component.Find("strong");
-			Assert.That(titleNode.InnerText, Is.EqualTo("My title"));
+			Assert.That(titleNode.TextContent, Is.EqualTo("My title"));
 		}
 	}
 }

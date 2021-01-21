@@ -19,5 +19,5 @@
     public void Dispose() =>
         this.ViewModel.Changed -= this.OnChange;
 
-    private void OnChange(object sender, EventArgs args) => this.StateHasChanged();
+    private void OnChange(object? sender, EventArgs args) => this.StateHasChanged();
 }
