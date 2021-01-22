@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:62802",
-      "sslPort": 0
+      "applicationUrl": "http://localhost:64872/",
+      "sslPort": 44366
     }
   },
   "profiles": {
@@ -18,10 +18,10 @@
     "BlazingTheWeb.ServerSideHost": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "http://localhost:5000"
     }
   }
 }
