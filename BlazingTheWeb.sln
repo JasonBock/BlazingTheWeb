@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.props = Directory.Build.props
 		nuget.config = nuget.config
 		README.md = README.md
+		value.txt = value.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.WebAssembly", "BlazingTheWeb.WebAssembly\BlazingTheWeb.WebAssembly.csproj", "{537FFF8F-2BA9-4A57-91ED-F36543E835A8}"
@@ -32,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.ServiceHost",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.SeleniumTests", "BlazingTheWeb.SeleniumTests\BlazingTheWeb.SeleniumTests.csproj", "{791BA695-E5C2-4E7E-8275-9ED8A4379D53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTheWeb.WebAssemblyHost", "BlazingTheWeb.WebAssemblyHost\BlazingTheWeb.WebAssemblyHost.csproj", "{1AFC500C-77D3-4F55-9BB2-30281CEEB413}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingTheWeb.WebAssemblyHost", "BlazingTheWeb.WebAssemblyHost\BlazingTheWeb.WebAssemblyHost.csproj", "{1AFC500C-77D3-4F55-9BB2-30281CEEB413}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
