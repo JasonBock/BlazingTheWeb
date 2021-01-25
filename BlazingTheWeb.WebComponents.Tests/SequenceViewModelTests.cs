@@ -30,9 +30,13 @@ namespace BlazingTheWeb.WebComponents.Tests
 		[Test]
 		public static async Task CreateSequence()
 		{
-			var runtime = Rock.Create<IJSRuntime>();
-			runtime.Methods().InvokeAsync<object>(Constants.ChartsMethod, Arg.Any<object?[]?>())
+			var reference = Rock.Create<IJSObjectReference>();
+			reference.Methods().InvokeAsync<object>(Constants.ChartsMethod, Arg.Any<object?[]?>())
 				.Returns(new ValueTask<object>());
+
+			var runtime = Rock.Create<IJSRuntime>();
+			runtime.Methods().InvokeAsync<IJSObjectReference>(Constants.Import, new object[] { Constants.ChartsFileLocation })
+				.Returns(new ValueTask<IJSObjectReference>(reference.Instance()));
 
 			var wasChangedRaised = false;
 
@@ -52,14 +56,19 @@ namespace BlazingTheWeb.WebComponents.Tests
 			});
 
 			runtime.Verify();
+			reference.Verify();
 		}
 
 		[Test]
 		public static async Task CreateSequenceWhenValueIsIncorrect()
 		{
-			var runtime = Rock.Create<IJSRuntime>();
-			runtime.Methods().InvokeAsync<object>(Constants.ChartsMethod, Arg.Any<object?[]?>())
+			var reference = Rock.Create<IJSObjectReference>();
+			reference.Methods().InvokeAsync<object>(Constants.ChartsMethod, Arg.Any<object?[]?>())
 				.Returns(new ValueTask<object>());
+
+			var runtime = Rock.Create<IJSRuntime>();
+			runtime.Methods().InvokeAsync<IJSObjectReference>(Constants.Import, new object[] { Constants.ChartsFileLocation })
+				.Returns(new ValueTask<IJSObjectReference>(reference.Instance()));
 
 			var wasChangedRaised = false;
 
@@ -84,9 +93,13 @@ namespace BlazingTheWeb.WebComponents.Tests
 		[Test]
 		public static async Task CreateSequenceWhenValueIsNotABigInteger()
 		{
-			var runtime = Rock.Create<IJSRuntime>();
-			runtime.Methods().InvokeAsync<object>(Constants.ChartsMethod, Arg.Any<object?[]?>())
+			var reference = Rock.Create<IJSObjectReference>();
+			reference.Methods().InvokeAsync<object>(Constants.ChartsMethod, Arg.Any<object?[]?>())
 				.Returns(new ValueTask<object>());
+
+			var runtime = Rock.Create<IJSRuntime>();
+			runtime.Methods().InvokeAsync<IJSObjectReference>(Constants.Import, new object[] { Constants.ChartsFileLocation })
+				.Returns(new ValueTask<IJSObjectReference>(reference.Instance()));
 
 			var wasChangedRaised = false;
 

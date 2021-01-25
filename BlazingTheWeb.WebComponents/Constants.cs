@@ -2,7 +2,10 @@
 {
 	public static class Constants
 	{
-		public const string ChartsMethod = "Charts.updateChart";
-		public const string GeolocationMethod = "Geolocation.getGeolocation";
+		public const string ChartsFileLocation = "./_content/BlazingTheWeb.WebComponents/charting.js";
+		public const string ChartsMethod = "updateChart";
+		public const string GeolocationFileLocation = "./_content/BlazingTheWeb.WebComponents/location.js";
+		public const string GeolocationMethod = "getGeolocation";
+		public const string Import = "import";
 	}
 }

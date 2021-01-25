@@ -17,6 +17,9 @@ namespace BlazingTheWeb.WebComponents
 
 		public async Task CreateSequenceAsync()
 		{
+			var module = await this.runtime.InvokeAsync<IJSObjectReference>(
+				  Constants.Import, Constants.ChartsFileLocation);
+
 			if (BigInteger.TryParse(this.Value, out var value))
 			{
 				try
@@ -25,7 +28,7 @@ namespace BlazingTheWeb.WebComponents
 					this.CurrentSequence = string.Join(", ", sequence.Sequence);
 					this.Sequence = sequence.Sequence.Select(_ => (int)_).ToArray();
 					this.Labels = Enumerable.Range(1, sequence.Sequence.Length).Select(_ => _.ToString()).ToArray();
-					await this.runtime.InvokeAsync<object>(
+					await module.InvokeAsync<object>(
 						Constants.ChartsMethod, this.ChartReference,
 						sequence.Sequence.Select(_ => (int)_).ToArray(), this.Labels);
 				}
@@ -34,7 +37,7 @@ namespace BlazingTheWeb.WebComponents
 					this.CurrentSequence = $"The value, {value}, is incorrect.";
 					this.Sequence = Array.Empty<int>();
 					this.Labels = Array.Empty<string>();
-					await this.runtime.InvokeAsync<object>(
+					await module.InvokeAsync<object>(
 						Constants.ChartsMethod, this.ChartReference,
 						Array.Empty<int>(), Array.Empty<string>());
 				}
@@ -44,7 +47,7 @@ namespace BlazingTheWeb.WebComponents
 				this.CurrentSequence = $"{this.Value} is not a valid integer.";
 				this.Sequence = Array.Empty<int>();
 				this.Labels = Array.Empty<string>();
-				await this.runtime.InvokeAsync<object>(
+				await module.InvokeAsync<object>(
 					Constants.ChartsMethod, this.ChartReference,
 					Array.Empty<int>(), Array.Empty<string>());
 			}
