@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
@@ -6,7 +6,7 @@
     <PackageReference Include="Blazored.LocalStorage" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.2" />
     <PackageReference Include="Google.Protobuf" Version="3.14.0" />
-    <PackageReference Include="Grpc.Net.Client" Version="2.34.0" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.52.0" />
     <PackageReference Include="Grpc.Tools" Version="2.34.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
